@@ -1,33 +1,11 @@
-// import products from '../data/products.json';
+import { basketReducer } from './reducer/basketReducer';
+import { productReducer } from './reducer/productReducer';
+import { combineReducers } from 'redux';
 
-const InitialState = {
-    products: [],
-    basket: []
-}
+const rootReducer = combineReducers({
+    basketReducer,
+    productReducer
+})
 
-function reducer(state = InitialState, action) {
-    switch (action.type) {
-        case 'GET_PRODUCTS':
-            return {
-                ...state,
-                products: [
-                    ...state.products,
-                    ...action.payload
-                ]
-            };
-        case 'ADD_BASKET':
-            return {
-                ...state,
-                basket: [
-                    ...state.basket,
-                    {
-                        product: action.payload
-                    }
-                ]
-            };
-        default:
-            return state;
-    }
-}
 
-export default reducer;
+export default rootReducer;

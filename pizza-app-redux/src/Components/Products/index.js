@@ -6,7 +6,7 @@ import { getProducts } from '../../redux/productActions';
 function Products() {
     const dispatch = useDispatch();
 
-    const products = useSelector(state => state.products)
+    const { products } = useSelector(state => state.productReducer)
 
     useEffect(() => {
         getProducts()(dispatch);
@@ -17,7 +17,7 @@ function Products() {
             <div className="col-12">
                 <h2 className="f-700 text-center">Popular dishes</h2>
             </div>
-            {products.map((prod, key) =>
+            {products?.map((prod, key) =>
                 <Product product={prod} key={key} />
             )}
         </div>

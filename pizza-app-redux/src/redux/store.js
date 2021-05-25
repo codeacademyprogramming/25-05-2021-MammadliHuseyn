@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from 'redux';
-import reducer from "./reducer";
+import rootReducer from "./reducer";
 import thunk from 'redux-thunk';
 
 
@@ -12,7 +12,7 @@ const logger = storeApi => next => action => {
 }
 
 const store = createStore(
-    reducer,
+    rootReducer,
     applyMiddleware(
         logger,
         thunk
