@@ -4,10 +4,10 @@ import thunk from 'redux-thunk';
 
 
 const logger = storeApi => next => action => {
-    console.log('Store before dispatch', storeApi.getState());
-    console.log('Action dispatch', action);
+    console.log('Prev store', storeApi.getState());
+    console.log('Action', action);
     const result = next(action);
-    console.log('Store after dispatch', storeApi.getState());
+    console.log('After store', storeApi.getState());
     return result;
 }
 

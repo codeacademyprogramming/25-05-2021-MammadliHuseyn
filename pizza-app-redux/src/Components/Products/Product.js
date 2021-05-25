@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import dumbPizzaImg from '../../assets/img/pizza (1).png';
 import { useDispatch } from 'react-redux';
 import { AddToBasket } from '../../redux/basketActions';
