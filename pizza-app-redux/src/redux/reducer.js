@@ -1,12 +1,20 @@
-import products from '../data/products.json';
+// import products from '../data/products.json';
 
 const InitialState = {
-    products,
+    products: [],
     basket: []
 }
 
 function reducer(state = InitialState, action) {
     switch (action.type) {
+        case 'GET_PRODUCTS':
+            return {
+                ...state,
+                products: [
+                    ...state.products,
+                    ...action.payload
+                ]
+            };
         case 'ADD_BASKET':
             return {
                 ...state,
