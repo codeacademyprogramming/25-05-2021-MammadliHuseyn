@@ -1,14 +1,14 @@
 import React from 'react';
 import dumbPizzaImg from '../../assets/img/pizza (1).png';
 import { useDispatch } from 'react-redux';
-import { AddToBasket } from '../../redux/basketActions';
+import { addToBasket } from '../../redux/basketActions';
 
 function Product({ product }) {
 
     const dispatch = useDispatch();
 
     const addItemToBasket = (product) => {
-        dispatch(AddToBasket(product))
+        dispatch(addToBasket(product))
     }
 
     return (

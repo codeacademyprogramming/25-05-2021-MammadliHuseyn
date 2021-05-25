@@ -4,7 +4,13 @@ export const basketReducer = (state = { items: [] }, action) => {
             return {
                 items: [
                     ...state.items,
-                    action.payload
+                    { ...action.payload, counter: action.payload.counter += 1 }
+                ]
+            };
+        case 'REMOVE_FROM_BASKET':
+            return {
+                items: [
+                    ...state.items.filter(item => action.payload.id !== item.id)
                 ]
             };
         default:
